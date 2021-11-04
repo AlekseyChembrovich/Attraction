@@ -38,8 +38,16 @@ namespace Attraction.BusinessLayer.Dto.Event
             Description = eEvent.Description;
             TypeEventId = eEvent.TypeEventId;
             AttractionId = eEvent.AttractionId;
-            TypeEventDto = new TypeEventDto(eEvent.TypeEvent);
-            AttractionDto = new AttractionDto(eEvent.Attraction);
+
+            if (eEvent.TypeEvent != null)
+            {
+                TypeEventDto = new TypeEventDto(eEvent.TypeEvent);
+            }
+
+            if (eEvent.Attraction != null)
+            {
+                AttractionDto = new AttractionDto(eEvent.Attraction);
+            }
         }
     }
 }

@@ -38,12 +38,16 @@ namespace Attraction.PresentationLayer
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.wordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button6 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -64,25 +68,31 @@ namespace Attraction.PresentationLayer
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.деталиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отобратьСобытияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.button17 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.button16 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button15 = new System.Windows.Forms.Button();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button10 = new System.Windows.Forms.Button();
@@ -91,6 +101,7 @@ namespace Attraction.PresentationLayer
             this.label19 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button14 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -106,7 +117,13 @@ namespace Attraction.PresentationLayer
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.label25 = new System.Windows.Forms.Label();
+            this.button19 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -118,6 +135,8 @@ namespace Attraction.PresentationLayer
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -233,6 +252,8 @@ namespace Attraction.PresentationLayer
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.textBox7);
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.button6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -240,6 +261,29 @@ namespace Attraction.PresentationLayer
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(834, 58);
             this.panel2.TabIndex = 1;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.label21.Location = new System.Drawing.Point(433, 18);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(65, 23);
+            this.label21.TabIndex = 3;
+            this.label21.Text = "Поиск:";
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox7.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.textBox7.Location = new System.Drawing.Point(504, 16);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(240, 30);
+            this.textBox7.TabIndex = 2;
+            this.textBox7.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // button7
             // 
@@ -267,12 +311,14 @@ namespace Attraction.PresentationLayer
             this.wordToolStripMenuItem.Name = "wordToolStripMenuItem";
             this.wordToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.wordToolStripMenuItem.Text = "Word";
+            this.wordToolStripMenuItem.Click += new System.EventHandler(this.wordToolStripMenuItem_Click);
             // 
             // excelToolStripMenuItem
             // 
             this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
             this.excelToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.excelToolStripMenuItem.Text = "Excel";
+            this.excelToolStripMenuItem.Click += new System.EventHandler(this.excelToolStripMenuItem_Click);
             // 
             // button6
             // 
@@ -291,6 +337,8 @@ namespace Attraction.PresentationLayer
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.button18);
+            this.panel3.Controls.Add(this.button13);
             this.panel3.Controls.Add(this.button8);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.comboBox2);
@@ -311,6 +359,34 @@ namespace Attraction.PresentationLayer
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(26, 20);
             this.panel3.TabIndex = 2;
+            // 
+            // button18
+            // 
+            this.button18.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button18.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button18.Location = new System.Drawing.Point(20, 257);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(136, 43);
+            this.button18.TabIndex = 18;
+            this.button18.Text = "Выбрать изображение";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // button13
+            // 
+            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button13.Location = new System.Drawing.Point(517, 243);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(136, 43);
+            this.button13.TabIndex = 17;
+            this.button13.Text = "Очистить";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button8
             // 
@@ -333,9 +409,9 @@ namespace Attraction.PresentationLayer
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             this.label7.Location = new System.Drawing.Point(20, 217);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(142, 19);
+            this.label7.Size = new System.Drawing.Size(138, 19);
             this.label7.TabIndex = 15;
-            this.label7.Text = "Место положение:";
+            this.label7.Text = "Местоположение:";
             // 
             // comboBox2
             // 
@@ -397,11 +473,11 @@ namespace Attraction.PresentationLayer
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.label5.Location = new System.Drawing.Point(457, 139);
+            this.label5.Location = new System.Drawing.Point(420, 139);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 19);
+            this.label5.Size = new System.Drawing.Size(148, 19);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Время начала:";
+            this.label5.Text = "Время завершения:";
             // 
             // dateTimePicker2
             // 
@@ -517,6 +593,7 @@ namespace Attraction.PresentationLayer
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(154, 22);
             this.textBox1.TabIndex = 0;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterOnlyLetter);
             // 
             // listView1
             // 
@@ -530,9 +607,9 @@ namespace Attraction.PresentationLayer
             this.listView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 67);
+            this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(834, 410);
+            this.listView1.Size = new System.Drawing.Size(834, 392);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -541,31 +618,56 @@ namespace Attraction.PresentationLayer
             // 
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.удалитьToolStripMenuItem,
-            this.изменитьToolStripMenuItem});
+            this.изменитьToolStripMenuItem,
+            this.деталиToolStripMenuItem,
+            this.отобратьСобытияToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(177, 92);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
+            // 
+            // изменитьToolStripMenuItem
+            // 
+            this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.изменитьToolStripMenuItem.Text = "Изменить";
+            this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.изменитьToolStripMenuItem_Click);
+            // 
+            // деталиToolStripMenuItem
+            // 
+            this.деталиToolStripMenuItem.Name = "деталиToolStripMenuItem";
+            this.деталиToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.деталиToolStripMenuItem.Text = "Детали";
+            this.деталиToolStripMenuItem.Visible = false;
+            this.деталиToolStripMenuItem.Click += new System.EventHandler(this.деталиToolStripMenuItem_Click);
+            // 
+            // отобратьСобытияToolStripMenuItem
+            // 
+            this.отобратьСобытияToolStripMenuItem.Name = "отобратьСобытияToolStripMenuItem";
+            this.отобратьСобытияToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.отобратьСобытияToolStripMenuItem.Text = "Отобрать события";
+            this.отобратьСобытияToolStripMenuItem.Visible = false;
+            this.отобратьСобытияToolStripMenuItem.Click += new System.EventHandler(this.отобратьСобытияToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.panel9, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.listView1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(360, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.75F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(840, 800);
             this.tableLayoutPanel1.TabIndex = 4;
@@ -577,24 +679,40 @@ namespace Attraction.PresentationLayer
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.panel3);
-            this.panel4.Location = new System.Drawing.Point(3, 483);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 465);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(834, 305);
+            this.panel4.Size = new System.Drawing.Size(834, 332);
             this.panel4.TabIndex = 5;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.button17);
             this.panel8.Controls.Add(this.button12);
             this.panel8.Controls.Add(this.label18);
             this.panel8.Controls.Add(this.textBox11);
             this.panel8.Controls.Add(this.label20);
             this.panel8.Controls.Add(this.textBox12);
-            this.panel8.Location = new System.Drawing.Point(799, 100);
+            this.panel8.Location = new System.Drawing.Point(799, 102);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(26, 17);
+            this.panel8.Size = new System.Drawing.Size(26, 16);
             this.panel8.TabIndex = 17;
+            // 
+            // button17
+            // 
+            this.button17.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button17.Location = new System.Drawing.Point(513, 243);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(136, 43);
+            this.button17.TabIndex = 18;
+            this.button17.Text = "Очистить";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button12
             // 
@@ -654,11 +772,13 @@ namespace Attraction.PresentationLayer
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(154, 22);
             this.textBox12.TabIndex = 0;
+            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterOnlyLetter);
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.button16);
             this.panel7.Controls.Add(this.button11);
             this.panel7.Controls.Add(this.label22);
             this.panel7.Controls.Add(this.textBox9);
@@ -666,8 +786,22 @@ namespace Attraction.PresentationLayer
             this.panel7.Controls.Add(this.textBox10);
             this.panel7.Location = new System.Drawing.Point(799, 78);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(26, 16);
+            this.panel7.Size = new System.Drawing.Size(26, 18);
             this.panel7.TabIndex = 5;
+            // 
+            // button16
+            // 
+            this.button16.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button16.Location = new System.Drawing.Point(515, 243);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(136, 43);
+            this.button16.TabIndex = 18;
+            this.button16.Text = "Очистить";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button11
             // 
@@ -727,15 +861,17 @@ namespace Attraction.PresentationLayer
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(154, 22);
             this.textBox10.TabIndex = 0;
+            this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterOnlyLetter);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.button15);
+            this.panel6.Controls.Add(this.maskedTextBox2);
+            this.panel6.Controls.Add(this.maskedTextBox1);
             this.panel6.Controls.Add(this.label17);
-            this.panel6.Controls.Add(this.textBox8);
             this.panel6.Controls.Add(this.label16);
-            this.panel6.Controls.Add(this.textBox7);
             this.panel6.Controls.Add(this.label10);
             this.panel6.Controls.Add(this.textBox5);
             this.panel6.Controls.Add(this.button10);
@@ -748,6 +884,44 @@ namespace Attraction.PresentationLayer
             this.panel6.Size = new System.Drawing.Size(26, 18);
             this.panel6.TabIndex = 4;
             // 
+            // button15
+            // 
+            this.button15.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button15.Location = new System.Drawing.Point(515, 243);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(136, 43);
+            this.button15.TabIndex = 26;
+            this.button15.Text = "Очистить";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.maskedTextBox2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.maskedTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.maskedTextBox2.Location = new System.Drawing.Point(402, 96);
+            this.maskedTextBox2.Mask = "00,000000°";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(71, 24);
+            this.maskedTextBox2.TabIndex = 25;
+            this.maskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.maskedTextBox1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.maskedTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.maskedTextBox1.Location = new System.Drawing.Point(402, 53);
+            this.maskedTextBox1.Mask = "00,000000°";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(71, 24);
+            this.maskedTextBox1.TabIndex = 24;
+            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -759,17 +933,6 @@ namespace Attraction.PresentationLayer
             this.label17.TabIndex = 22;
             this.label17.Text = "Долгота:";
             // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.textBox8.Location = new System.Drawing.Point(402, 98);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(154, 22);
-            this.textBox8.TabIndex = 21;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -780,17 +943,6 @@ namespace Attraction.PresentationLayer
             this.label16.Size = new System.Drawing.Size(68, 19);
             this.label16.TabIndex = 20;
             this.label16.Text = "Широта:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.textBox7.Location = new System.Drawing.Point(402, 56);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(154, 22);
-            this.textBox7.TabIndex = 19;
             // 
             // label10
             // 
@@ -813,6 +965,7 @@ namespace Attraction.PresentationLayer
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(154, 22);
             this.textBox5.TabIndex = 17;
+            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterAddress);
             // 
             // button10
             // 
@@ -842,6 +995,7 @@ namespace Attraction.PresentationLayer
             // comboBox6
             // 
             this.comboBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox6.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
@@ -880,11 +1034,13 @@ namespace Attraction.PresentationLayer
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(154, 22);
             this.textBox6.TabIndex = 0;
+            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterOnlyLetter);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.button14);
             this.panel5.Controls.Add(this.button9);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.comboBox3);
@@ -898,10 +1054,24 @@ namespace Attraction.PresentationLayer
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.textBox4);
-            this.panel5.Location = new System.Drawing.Point(799, 30);
+            this.panel5.Location = new System.Drawing.Point(22, 30);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(26, 18);
+            this.panel5.Size = new System.Drawing.Size(803, 305);
             this.panel5.TabIndex = 3;
+            // 
+            // button14
+            // 
+            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button14.Location = new System.Drawing.Point(517, 243);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(136, 43);
+            this.button14.TabIndex = 18;
+            this.button14.Text = "Очистить";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button9
             // 
@@ -1065,6 +1235,7 @@ namespace Attraction.PresentationLayer
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(154, 22);
             this.textBox4.TabIndex = 0;
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterOnlyLetter);
             // 
             // toolStripMenuItem1
             // 
@@ -1078,12 +1249,94 @@ namespace Attraction.PresentationLayer
             this.toolStripMenuItem2.Size = new System.Drawing.Size(103, 22);
             this.toolStripMenuItem2.Text = "Excel";
             // 
-            // изменитьToolStripMenuItem
+            // panel9
             // 
-            this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.изменитьToolStripMenuItem.Text = "Изменить";
-            this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.изменитьToolStripMenuItem_Click);
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Controls.Add(this.listView1);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(3, 67);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(834, 392);
+            this.panel9.TabIndex = 5;
+            // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.button19);
+            this.panel10.Controls.Add(this.dateTimePicker4);
+            this.panel10.Controls.Add(this.label25);
+            this.panel10.Controls.Add(this.label23);
+            this.panel10.Controls.Add(this.comboBox5);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel10.Location = new System.Drawing.Point(0, 320);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(834, 72);
+            this.panel10.TabIndex = 4;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.label23.Location = new System.Drawing.Point(294, 14);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(186, 19);
+            this.label23.TabIndex = 17;
+            this.label23.Text = "Достопримечательность:";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox5.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(486, 12);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(157, 22);
+            this.comboBox5.TabIndex = 16;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.CalendarFont = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker4.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.dateTimePicker4.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.dateTimePicker4.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.dateTimePicker4.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.dateTimePicker4.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.dateTimePicker4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker4.Location = new System.Drawing.Point(159, 12);
+            this.dateTimePicker4.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(129, 22);
+            this.dateTimePicker4.TabIndex = 19;
+            this.dateTimePicker4.Value = new System.DateTime(2021, 10, 30, 0, 0, 0, 0);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.label25.Location = new System.Drawing.Point(17, 12);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(136, 19);
+            this.label25.TabIndex = 18;
+            this.label25.Text = "Дата проведение:";
+            // 
+            // button19
+            // 
+            this.button19.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button19.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button19.Location = new System.Drawing.Point(688, 12);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(136, 43);
+            this.button19.TabIndex = 20;
+            this.button19.Text = "Фильтр";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // FormMain
             // 
@@ -1094,14 +1347,17 @@ namespace Attraction.PresentationLayer
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormMain";
+            this.Text = "Рабочая область";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -1116,6 +1372,9 @@ namespace Attraction.PresentationLayer
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1178,9 +1437,7 @@ namespace Attraction.PresentationLayer
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label18;
@@ -1198,5 +1455,24 @@ namespace Attraction.PresentationLayer
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.ToolStripMenuItem деталиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem отобратьСобытияToolStripMenuItem;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button button19;
+        internal System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox comboBox5;
     }
 }

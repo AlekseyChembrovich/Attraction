@@ -50,8 +50,15 @@ namespace Attraction.BusinessLayer.Dto.Attraction
             EndTime = attraction.EndTime;
             LocalityId = attraction.LocalityId;
             TypeAttractionId = attraction.TypeAttractionId;
-            LocalityDto = new LocalityDto(attraction.Locality);
-            TypeAttractionDto = new TypeAttractionDto(attraction.TypeAttraction);
+            if (attraction.Locality != null)
+            {
+                LocalityDto = new LocalityDto(attraction.Locality);
+            }
+
+            if (attraction.TypeAttraction != null)
+            {
+                TypeAttractionDto = new TypeAttractionDto(attraction.TypeAttraction);
+            }
         }
     }
 }
