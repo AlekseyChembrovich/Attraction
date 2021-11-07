@@ -2,10 +2,10 @@
 {
     public enum CurrentTable : byte
     {
-        Attraction = 1,
-        Event = 2,
-        Locality = 3,
-        TypeAttraction = 4,
-        TypeEvent = 5
+        Attraction = 0,
+        Event = 1,
+        Locality = 2,
+        TypeAttraction = 3,
+        TypeEvent = 4
     }
 }

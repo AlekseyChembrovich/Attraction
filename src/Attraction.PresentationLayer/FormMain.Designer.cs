@@ -44,6 +44,11 @@ namespace Attraction.PresentationLayer
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.wordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.достопримечательностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.событияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.местаНахожденияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.типыДостопримечательностейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.типыСобытийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button6 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button18 = new System.Windows.Forms.Button();
@@ -72,6 +77,14 @@ namespace Attraction.PresentationLayer
             this.деталиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отобратьСобытияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.button17 = new System.Windows.Forms.Button();
@@ -117,26 +130,19 @@ namespace Attraction.PresentationLayer
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.label25 = new System.Windows.Forms.Label();
-            this.button19 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -232,6 +238,7 @@ namespace Attraction.PresentationLayer
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
             this.button1.FlatAppearance.BorderSize = 0;
@@ -246,7 +253,7 @@ namespace Attraction.PresentationLayer
             this.button1.TabIndex = 0;
             this.button1.Text = "Достопримечательности";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
@@ -315,10 +322,50 @@ namespace Attraction.PresentationLayer
             // 
             // excelToolStripMenuItem
             // 
+            this.excelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.достопримечательностиToolStripMenuItem,
+            this.событияToolStripMenuItem,
+            this.местаНахожденияToolStripMenuItem,
+            this.типыДостопримечательностейToolStripMenuItem,
+            this.типыСобытийToolStripMenuItem});
             this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
             this.excelToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.excelToolStripMenuItem.Text = "Excel";
-            this.excelToolStripMenuItem.Click += new System.EventHandler(this.excelToolStripMenuItem_Click);
+            // 
+            // достопримечательностиToolStripMenuItem
+            // 
+            this.достопримечательностиToolStripMenuItem.Name = "достопримечательностиToolStripMenuItem";
+            this.достопримечательностиToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.достопримечательностиToolStripMenuItem.Text = "Достопримечательности";
+            this.достопримечательностиToolStripMenuItem.Click += new System.EventHandler(this.достопримечательностиToolStripMenuItem_Click);
+            // 
+            // событияToolStripMenuItem
+            // 
+            this.событияToolStripMenuItem.Name = "событияToolStripMenuItem";
+            this.событияToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.событияToolStripMenuItem.Text = "События";
+            this.событияToolStripMenuItem.Click += new System.EventHandler(this.событияToolStripMenuItem_Click);
+            // 
+            // местаНахожденияToolStripMenuItem
+            // 
+            this.местаНахожденияToolStripMenuItem.Name = "местаНахожденияToolStripMenuItem";
+            this.местаНахожденияToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.местаНахожденияToolStripMenuItem.Text = "Места нахождения";
+            this.местаНахожденияToolStripMenuItem.Click += new System.EventHandler(this.местаНахожденияToolStripMenuItem_Click);
+            // 
+            // типыДостопримечательностейToolStripMenuItem
+            // 
+            this.типыДостопримечательностейToolStripMenuItem.Name = "типыДостопримечательностейToolStripMenuItem";
+            this.типыДостопримечательностейToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.типыДостопримечательностейToolStripMenuItem.Text = "Типы достопримечательностей";
+            this.типыДостопримечательностейToolStripMenuItem.Click += new System.EventHandler(this.типыДостопримечательностейToolStripMenuItem_Click);
+            // 
+            // типыСобытийToolStripMenuItem
+            // 
+            this.типыСобытийToolStripMenuItem.Name = "типыСобытийToolStripMenuItem";
+            this.типыСобытийToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
+            this.типыСобытийToolStripMenuItem.Text = "Типы событий";
+            this.типыСобытийToolStripMenuItem.Click += new System.EventHandler(this.типыСобытийToolStripMenuItem_Click);
             // 
             // button6
             // 
@@ -671,6 +718,110 @@ namespace Attraction.PresentationLayer
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(840, 800);
             this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Controls.Add(this.listView1);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(3, 67);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(834, 392);
+            this.panel9.TabIndex = 5;
+            // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.button20);
+            this.panel10.Controls.Add(this.button19);
+            this.panel10.Controls.Add(this.dateTimePicker4);
+            this.panel10.Controls.Add(this.label25);
+            this.panel10.Controls.Add(this.label23);
+            this.panel10.Controls.Add(this.comboBox5);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel10.Location = new System.Drawing.Point(0, 288);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(834, 104);
+            this.panel10.TabIndex = 4;
+            // 
+            // button20
+            // 
+            this.button20.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button20.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button20.Location = new System.Drawing.Point(536, 12);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(136, 43);
+            this.button20.TabIndex = 21;
+            this.button20.Text = "Очистить";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // button19
+            // 
+            this.button19.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button19.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button19.Location = new System.Drawing.Point(688, 12);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(136, 43);
+            this.button19.TabIndex = 20;
+            this.button19.Text = "Фильтр";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.CalendarFont = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker4.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.dateTimePicker4.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.dateTimePicker4.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.dateTimePicker4.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.dateTimePicker4.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.dateTimePicker4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker4.Location = new System.Drawing.Point(159, 12);
+            this.dateTimePicker4.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(129, 22);
+            this.dateTimePicker4.TabIndex = 19;
+            this.dateTimePicker4.Value = new System.DateTime(2021, 10, 30, 0, 0, 0, 0);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.label25.Location = new System.Drawing.Point(17, 12);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(136, 19);
+            this.label25.TabIndex = 18;
+            this.label25.Text = "Дата проведение:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.label23.Location = new System.Drawing.Point(17, 52);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(186, 19);
+            this.label23.TabIndex = 17;
+            this.label23.Text = "Достопримечательность:";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox5.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(209, 53);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(157, 22);
+            this.comboBox5.TabIndex = 16;
             // 
             // panel4
             // 
@@ -1054,9 +1205,9 @@ namespace Attraction.PresentationLayer
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.textBox4);
-            this.panel5.Location = new System.Drawing.Point(22, 30);
+            this.panel5.Location = new System.Drawing.Point(799, 30);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(803, 305);
+            this.panel5.Size = new System.Drawing.Size(26, 18);
             this.panel5.TabIndex = 3;
             // 
             // button14
@@ -1249,95 +1400,6 @@ namespace Attraction.PresentationLayer
             this.toolStripMenuItem2.Size = new System.Drawing.Size(103, 22);
             this.toolStripMenuItem2.Text = "Excel";
             // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.panel10);
-            this.panel9.Controls.Add(this.listView1);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(3, 67);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(834, 392);
-            this.panel9.TabIndex = 5;
-            // 
-            // panel10
-            // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.button19);
-            this.panel10.Controls.Add(this.dateTimePicker4);
-            this.panel10.Controls.Add(this.label25);
-            this.panel10.Controls.Add(this.label23);
-            this.panel10.Controls.Add(this.comboBox5);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(0, 320);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(834, 72);
-            this.panel10.TabIndex = 4;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.label23.Location = new System.Drawing.Point(294, 14);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(186, 19);
-            this.label23.TabIndex = 17;
-            this.label23.Text = "Достопримечательность:";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox5.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(486, 12);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(157, 22);
-            this.comboBox5.TabIndex = 16;
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.CalendarFont = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker4.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.dateTimePicker4.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
-            this.dateTimePicker4.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
-            this.dateTimePicker4.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
-            this.dateTimePicker4.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
-            this.dateTimePicker4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker4.Location = new System.Drawing.Point(159, 12);
-            this.dateTimePicker4.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(129, 22);
-            this.dateTimePicker4.TabIndex = 19;
-            this.dateTimePicker4.Value = new System.DateTime(2021, 10, 30, 0, 0, 0, 0);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.label25.Location = new System.Drawing.Point(17, 12);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(136, 19);
-            this.label25.TabIndex = 18;
-            this.label25.Text = "Дата проведение:";
-            // 
-            // button19
-            // 
-            this.button19.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
-            this.button19.Location = new System.Drawing.Point(688, 12);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(136, 43);
-            this.button19.TabIndex = 20;
-            this.button19.Text = "Фильтр";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 21F);
@@ -1363,6 +1425,9 @@ namespace Attraction.PresentationLayer
             this.panel3.PerformLayout();
             this.contextMenuStrip2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -1372,9 +1437,6 @@ namespace Attraction.PresentationLayer
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1474,5 +1536,11 @@ namespace Attraction.PresentationLayer
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ToolStripMenuItem достопримечательностиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem событияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem местаНахожденияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem типыДостопримечательностейToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem типыСобытийToolStripMenuItem;
+        private System.Windows.Forms.Button button20;
     }
 }

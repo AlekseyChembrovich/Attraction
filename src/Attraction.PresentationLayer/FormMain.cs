@@ -28,6 +28,7 @@ namespace Attraction.PresentationLayer
         private readonly ITypeAttractionService _typeAttractionService;
         private readonly ITypeEventService _typeEventService;
         private readonly List<Panel> _addPanels;
+        private readonly List<Button> _tablesButtons;
 
         public FormMain()
         {
@@ -43,16 +44,34 @@ namespace Attraction.PresentationLayer
 
             #endregion
             _addPanels = new List<Panel> { panel3, panel5, panel6, panel7, panel8 };
+            _tablesButtons = new List<Button> {button1, button2, button3, button4, button5};
         }
 
         private void FormMain_Load(object sender, EventArgs e)
+        {
+            UpdateCombobox();
+            button1_Click(null, null);
+        }
+
+        private void UpdateCombobox()
         {
             this.FillCombobox(comboBox1, _typeAttractionService.GetAll().Select(x => x.Name).ToArray());
             this.FillCombobox(comboBox5, _typeAttractionService.GetAll().Select(x => x.Name).ToArray());
             this.FillCombobox(comboBox2, _localityService.GetAll().Select(x => x.Name).ToArray());
             this.FillCombobox(comboBox3, _attractionService.GetAll().Select(x => x.Name).ToArray());
             this.FillCombobox(comboBox4, _typeEventService.GetAll().Select(x => x.Name).ToArray());
-            button1_Click(null, null);
+        }
+
+        private void PickOutButtonCurrentTable(CurrentTable currentTable)
+        {
+            var pickOut = Color.FromArgb(46, 51, 66);
+            var normal = Color.FromArgb(59, 64, 71);
+            var index = (int)currentTable;
+            _tablesButtons[index].BackColor = pickOut;
+            _tablesButtons.Except(new [] { _tablesButtons[index] }).ToList().ForEach(x =>
+            {
+                x.BackColor = normal;
+            });
         }
 
         private void ToggleItemsTableContextMenu(bool state)
@@ -64,6 +83,7 @@ namespace Attraction.PresentationLayer
         private void PrintEvents(IEnumerable<EventDto> eventsDto)
         {
             CurrentTable = CurrentTable.Event;
+            PickOutButtonCurrentTable(CurrentTable);
             this.OpenAddPanel(panel5, _addPanels);
             this.GenerateColumns(
                 listView1,
@@ -91,6 +111,7 @@ namespace Attraction.PresentationLayer
         public void button1_Click(object sender, EventArgs e)
         {
             CurrentTable = CurrentTable.Attraction;
+            PickOutButtonCurrentTable(CurrentTable);
             this.OpenAddPanel(panel3, _addPanels);
             this.GenerateColumns(
                 listView1,
@@ -116,6 +137,7 @@ namespace Attraction.PresentationLayer
 
             ToggleItemsTableContextMenu(true);
             panel10.Visible = false;
+            UpdateCombobox();
         }
 
         public void button2_Click(object sender, EventArgs e)
@@ -123,11 +145,13 @@ namespace Attraction.PresentationLayer
             var item = _eventService.GetAll();
             PrintEvents(item);
             panel10.Visible = true;
+            UpdateCombobox();
         }
 
         public void button3_Click(object sender, EventArgs e)
         {
             CurrentTable = CurrentTable.Locality;
+            PickOutButtonCurrentTable(CurrentTable);
             this.OpenAddPanel(panel6, _addPanels);
             this.GenerateColumns(
                 listView1,
@@ -150,11 +174,13 @@ namespace Attraction.PresentationLayer
 
             ToggleItemsTableContextMenu(false);
             panel10.Visible = false;
+            UpdateCombobox();
         }
 
         public void button4_Click(object sender, EventArgs e)
         {
             CurrentTable = CurrentTable.TypeAttraction;
+            PickOutButtonCurrentTable(CurrentTable);
             this.OpenAddPanel(panel7, _addPanels);
             this.GenerateColumns(
                 listView1,
@@ -174,11 +200,13 @@ namespace Attraction.PresentationLayer
 
             ToggleItemsTableContextMenu(false);
             panel10.Visible = false;
+            UpdateCombobox();
         }
 
         public void button5_Click(object sender, EventArgs e)
         {
             CurrentTable = CurrentTable.TypeEvent;
+            PickOutButtonCurrentTable(CurrentTable);
             this.OpenAddPanel(panel8, _addPanels);
             this.GenerateColumns(
                 listView1,
@@ -198,6 +226,7 @@ namespace Attraction.PresentationLayer
 
             ToggleItemsTableContextMenu(false);
             panel10.Visible = false;
+            UpdateCombobox();
         }
 
         private void button6_Click(object sender, EventArgs e) => Application.Exit();
@@ -518,6 +547,13 @@ namespace Attraction.PresentationLayer
             PrintEvents(eventsDto);
         }
 
+        private void button20_Click(object sender, EventArgs e)
+        {
+            dateTimePicker4.Value = DateTime.Now;
+            comboBox5.SelectedIndex = -1;
+            button2_Click(null, null);
+        }
+
         private void EnterOnlyLetter(object sender, KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar) || e.KeyChar is (char)Keys.Back or (char)Keys.Delete)
@@ -592,74 +628,7 @@ namespace Attraction.PresentationLayer
                 content.Find.Execute(FindText: target, ReplaceWith: data);
             }
         }
-
-        private void excelToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var application = new Excel.Application();
-            var worksheet = (Excel.Worksheet)application.Workbooks.Add(Type.Missing).ActiveSheet;
-            var listResult = new List<LocalityDto>();
-            /*using (CarContext context = new CarContext())
-            {
-                foreach (object item in dataGrid1.Items)
-                {
-                    List<string> listValue = CustomTableOperation.GetValueSelectedField(item.ToString());
-
-                    Material material = context.Material.ToList().Find(m => m.NameMaterial == listValue[0]);
-                    LotCar lotCar = context.LotCar.ToList().Find(l => l.Id == Convert.ToInt32(listValue[1]));
-
-                    SetupCar setupCar = context.SetupCar.ToList().Find(s => s.MaterialId == material.Id && s.LotCarId == lotCar.Id &&
-                    s.CountMaterial == Convert.ToInt32(listValue[2]));
-
-                    listResult.Add(setupCar);
-                }
-            }*/
-
-            // Выделяем диапазон ячеек от H1 до K1         
-            Excel.Range _excelCells = worksheet.get_Range("A1", "C1").Cells;
-            _excelCells.HorizontalAlignment = Excel.Constants.xlCenter;
-            _excelCells.Interior.Color = System.Drawing.Color.Gold;
-            // Производим объединение
-            _excelCells.Merge(Type.Missing);
-            worksheet.Cells[1, 1] = "Табличные данные по изготоленным партиям";
-
-            worksheet.Cells[2, 1] = "Наименование материала";
-            worksheet.Cells[2, 1].HorizontalAlignment = Excel.Constants.xlCenter;
-            worksheet.Columns[1].ColumnWidth = 30;
-            worksheet.Cells[2, 2] = "Код партии";
-            worksheet.Cells[2, 2].HorizontalAlignment = Excel.Constants.xlCenter;
-            worksheet.Columns[2].ColumnWidth = 30;
-            worksheet.Cells[2, 3] = "Количество материалов";
-            worksheet.Cells[2, 3].HorizontalAlignment = Excel.Constants.xlCenter;
-            worksheet.Columns[3].ColumnWidth = 30;
-
-            /*for (int i = 0; i < listResult.Count(); i++)
-            {
-                application.Cells[i + 3, 1] = listResult[i].Material.NameMaterial;
-                application.Cells[i + 3, 2] = listResult[i].LotCarId;
-                application.Cells[i + 3, 3] = listResult[i].CountMaterial;
-            }*/
-
-            worksheet.Cells[listResult.Count() + 5, 1] = "ФИО";
-            worksheet.Cells[listResult.Count() + 5, 1].HorizontalAlignment = Excel.Constants.xlCenter;
-            worksheet.Cells[listResult.Count() + 5, 1].Interior.Color = System.Drawing.Color.Gold;
-            Excel.XlBordersIndex BorderIndex1;
-            BorderIndex1 = Excel.XlBordersIndex.xlEdgeBottom;
-            worksheet.Cells[listResult.Count() + 5, 2].Borders[BorderIndex1].Weight = Excel.XlBorderWeight.xlThin;
-            worksheet.Cells[listResult.Count() + 5, 2].Borders[BorderIndex1].LineStyle = Excel.XlLineStyle.xlContinuous;
-            worksheet.Cells[listResult.Count() + 5, 2].Borders[BorderIndex1].ColorIndex = 0;
-
-            worksheet.Cells[listResult.Count() + 6, 1] = "Подпись";
-            worksheet.Cells[listResult.Count() + 6, 1].HorizontalAlignment = Excel.Constants.xlCenter;
-            worksheet.Cells[listResult.Count() + 6, 1].Interior.Color = System.Drawing.Color.Gold;
-            Excel.XlBordersIndex BorderIndex2;
-            BorderIndex2 = Excel.XlBordersIndex.xlEdgeBottom;
-            worksheet.Cells[listResult.Count() + 6, 2].Borders[BorderIndex2].Weight = Excel.XlBorderWeight.xlThin;
-            worksheet.Cells[listResult.Count() + 6, 2].Borders[BorderIndex2].LineStyle = Excel.XlLineStyle.xlContinuous;
-            worksheet.Cells[listResult.Count() + 6, 2].Borders[BorderIndex2].ColorIndex = 0;
-
-            application.Visible = true;
-        }
-
+        
         private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
             var itemsListView = listView1.Items;
@@ -685,6 +654,131 @@ namespace Attraction.PresentationLayer
                     item.Selected = false;
                 }
             }
+        }
+
+        private void PrintIntoExcel(CurrentTable currentTable, params string[] namesColumns)
+        {
+            var application = new Excel.Application();
+            var worksheet = (Excel.Worksheet)application.Workbooks.Add(Type.Missing).ActiveSheet;
+            const int indexFirstLetter = 65;
+            var nextLetter = Convert.ToChar(indexFirstLetter + namesColumns.Length - 1);
+            var excelCells = worksheet.get_Range("A1", $"{nextLetter}1").Cells;
+            excelCells.HorizontalAlignment = Excel.Constants.xlCenter;
+            excelCells.Interior.Color = Color.Gold;
+            excelCells.Merge(Type.Missing);
+            var nameTable = currentTable switch
+            {
+                CurrentTable.Attraction => "Достопримечательности",
+                CurrentTable.Event => "События",
+                CurrentTable.Locality => "Места нахождения",
+                CurrentTable.TypeAttraction => "Тыпи достопримечательностей",
+                CurrentTable.TypeEvent => "Типы событий",
+                _ => throw new ArgumentOutOfRangeException()
+            };
+
+            worksheet.Cells[1, 1] = $"Табличны данные \"{nameTable}\"";
+            for (var i = 0; i < namesColumns.Length; i++)
+            {
+                worksheet.Cells[2, i + 1] = namesColumns[i];
+                worksheet.Cells[2, i + 1].HorizontalAlignment = Excel.Constants.xlCenter;
+                worksheet.Columns[i + 1].ColumnWidth = 40;
+            }
+
+            switch (currentTable)
+            {
+                case CurrentTable.Attraction:
+                    var attractionsDto = _attractionService.GetAll();
+                    var listAttractions = attractionsDto.ToList();
+                    for (var i = 0; i < listAttractions.Count; i++)
+                    {
+                        application.Cells[i + 3, 1] = listAttractions[i].Name;
+                        application.Cells[i + 3, 2] = listAttractions[i].FoundationDate.Date;
+                        application.Cells[i + 3, 3] = listAttractions[i].Description;
+                        application.Cells[i + 3, 4] = listAttractions[i].IsRoundСlock ? "Да" : "Нет";
+                        application.Cells[i + 3, 5] = listAttractions[i].StartTime.ToString("g");
+                        application.Cells[i + 3, 6] = listAttractions[i].EndTime.ToString("g");
+                        var locality = _localityService.GetById(listAttractions[i].LocalityId);
+                        var typeAttraction = _typeAttractionService.GetById(listAttractions[i].TypeAttractionId);
+                        application.Cells[i + 3, 7] = locality.Name;
+                        application.Cells[i + 3, 8] = typeAttraction.Name;
+                    }
+                    break;
+                case CurrentTable.Event:
+                    var eventsDto = _eventService.GetAll();
+                    var listEvents = eventsDto.ToList();
+                    for (var i = 0; i < listEvents.Count; i++)
+                    {
+                        application.Cells[i + 3, 1] = listEvents[i].Name;
+                        application.Cells[i + 3, 2] = listEvents[i].Date.Date;
+                        application.Cells[i + 3, 3] = listEvents[i].StartTime.ToString("g");
+                        application.Cells[i + 3, 4] = listEvents[i].Description;
+                        var attraction = _attractionService.GetById(listEvents[i].AttractionId);
+                        var typeEvent = _typeEventService.GetById(listEvents[i].TypeEventId);
+                        application.Cells[i + 3, 5] = attraction.Name;
+                        application.Cells[i + 3, 6] = typeEvent.Name;
+                    }
+                    break;
+                case CurrentTable.Locality:
+                    var localitiesDto = _localityService.GetAll();
+                    var listLocalities = localitiesDto.ToList();
+                    for (var i = 0; i < listLocalities.Count; i++)
+                    {
+                        application.Cells[i + 3, 1] = listLocalities[i].Region;
+                        application.Cells[i + 3, 2] = listLocalities[i].Address;
+                        application.Cells[i + 3, 3] = listLocalities[i].Latitude;
+                        application.Cells[i + 3, 4] = listLocalities[i].Longitude;
+                    }
+                    break;
+                case CurrentTable.TypeAttraction:
+                    var typesAttractionDto = _typeAttractionService.GetAll();
+                    var listTypesAttraction = typesAttractionDto.ToList();
+                    for (var i = 0; i < listTypesAttraction.Count; i++)
+                    {
+                        application.Cells[i + 3, 1] = listTypesAttraction[i].Name;
+                        application.Cells[i + 3, 2] = listTypesAttraction[i].Description;
+                    }
+                    break;
+                case CurrentTable.TypeEvent:
+                    var typesEvent = _typeEventService.GetAll();
+                    var listTypesEvent = typesEvent.ToList();
+                    for (var i = 0; i < listTypesEvent.Count; i++)
+                    {
+                        application.Cells[i + 3, 1] = listTypesEvent[i].Name;
+                        application.Cells[i + 3, 2] = listTypesEvent[i].Description;
+                    }
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            application.Visible = true;
+        }
+
+        private void достопримечательностиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintIntoExcel(CurrentTable.Attraction, "Название", "Дата основания", "Описание", "Круглосуточность",
+                "Время начала", "Время окончания", "Местоположение", "Тип достопримечательности");
+        }
+
+        private void событияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintIntoExcel(CurrentTable.Event, "Название", "Дата проведения", "Время начала", "Описание",
+                "Достопримечательность", "Тип сотбытия");
+        }
+
+        private void местаНахожденияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintIntoExcel(CurrentTable.TypeEvent, "Регион", "Адрес", "Широта", "Долгота");
+        }
+
+        private void типыДостопримечательностейToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintIntoExcel(CurrentTable.TypeAttraction, "Название", "Описание");
+        }
+
+        private void типыСобытийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintIntoExcel(CurrentTable.TypeEvent, "Название", "Описание");
         }
     }
 }
