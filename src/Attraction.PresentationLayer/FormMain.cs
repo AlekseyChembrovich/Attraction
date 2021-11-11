@@ -56,7 +56,7 @@ namespace Attraction.PresentationLayer
         private void UpdateCombobox()
         {
             this.FillCombobox(comboBox1, _typeAttractionService.GetAll().Select(x => x.Name).ToArray());
-            this.FillCombobox(comboBox5, _typeAttractionService.GetAll().Select(x => x.Name).ToArray());
+            this.FillCombobox(comboBox5, _attractionService.GetAll().Select(x => x.Name).ToArray());
             this.FillCombobox(comboBox2, _localityService.GetAll().Select(x => x.Name).ToArray());
             this.FillCombobox(comboBox3, _attractionService.GetAll().Select(x => x.Name).ToArray());
             this.FillCombobox(comboBox4, _typeEventService.GetAll().Select(x => x.Name).ToArray());
@@ -74,10 +74,23 @@ namespace Attraction.PresentationLayer
             });
         }
 
-        private void ToggleItemsTableContextMenu(bool state)
+        private void ToggleItemsTableContextMenu(CurrentTable currentTable)
         {
-            деталиToolStripMenuItem.Visible = state;
-            отобратьСобытияToolStripMenuItem.Visible = state;
+            switch (currentTable)
+            {
+                case CurrentTable.Attraction:
+                    деталиToolStripMenuItem.Visible = true;
+                    отобратьСобытияToolStripMenuItem.Visible = true;
+                    отобратьДостопримечательностиToolStripMenuItem.Visible = false;
+                    break;
+                case CurrentTable.Locality:
+                    отобратьДостопримечательностиToolStripMenuItem.Visible = true;
+                    деталиToolStripMenuItem.Visible = false;
+                    отобратьСобытияToolStripMenuItem.Visible = false;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(currentTable), currentTable, null);
+            }
         }
 
         private void PrintEvents(IEnumerable<EventDto> eventsDto)
@@ -105,7 +118,7 @@ namespace Attraction.PresentationLayer
                 listView1.Items.Add(newItem);
             }
 
-            ToggleItemsTableContextMenu(false);
+            ToggleItemsTableContextMenu(CurrentTable);
         }
 
         public void button1_Click(object sender, EventArgs e)
@@ -135,7 +148,7 @@ namespace Attraction.PresentationLayer
                 listView1.Items.Add(newItem);
             }
 
-            ToggleItemsTableContextMenu(true);
+            ToggleItemsTableContextMenu(CurrentTable);
             panel10.Visible = false;
             UpdateCombobox();
         }
@@ -172,7 +185,7 @@ namespace Attraction.PresentationLayer
                 listView1.Items.Add(newItem);
             }
 
-            ToggleItemsTableContextMenu(false);
+            ToggleItemsTableContextMenu(CurrentTable);
             panel10.Visible = false;
             UpdateCombobox();
         }
@@ -198,7 +211,7 @@ namespace Attraction.PresentationLayer
                 listView1.Items.Add(newItem);
             }
 
-            ToggleItemsTableContextMenu(false);
+            ToggleItemsTableContextMenu(CurrentTable);
             panel10.Visible = false;
             UpdateCombobox();
         }
@@ -224,7 +237,7 @@ namespace Attraction.PresentationLayer
                 listView1.Items.Add(newItem);
             }
 
-            ToggleItemsTableContextMenu(false);
+            ToggleItemsTableContextMenu(CurrentTable);
             panel10.Visible = false;
             UpdateCombobox();
         }
@@ -779,6 +792,11 @@ namespace Attraction.PresentationLayer
         private void типыСобытийToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PrintIntoExcel(CurrentTable.TypeEvent, "Название", "Описание");
+        }
+
+        private void отобратьДостопримечательностиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

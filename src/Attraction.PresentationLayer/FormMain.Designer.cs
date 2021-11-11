@@ -130,6 +130,7 @@ namespace Attraction.PresentationLayer
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.отобратьДостопримечательностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -667,28 +668,29 @@ namespace Attraction.PresentationLayer
             this.удалитьToolStripMenuItem,
             this.изменитьToolStripMenuItem,
             this.деталиToolStripMenuItem,
-            this.отобратьСобытияToolStripMenuItem});
+            this.отобратьСобытияToolStripMenuItem,
+            this.отобратьДостопримечательностиToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(177, 92);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(266, 136);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
             // изменитьToolStripMenuItem
             // 
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.изменитьToolStripMenuItem.Text = "Изменить";
             this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.изменитьToolStripMenuItem_Click);
             // 
             // деталиToolStripMenuItem
             // 
             this.деталиToolStripMenuItem.Name = "деталиToolStripMenuItem";
-            this.деталиToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.деталиToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.деталиToolStripMenuItem.Text = "Детали";
             this.деталиToolStripMenuItem.Visible = false;
             this.деталиToolStripMenuItem.Click += new System.EventHandler(this.деталиToolStripMenuItem_Click);
@@ -696,7 +698,7 @@ namespace Attraction.PresentationLayer
             // отобратьСобытияToolStripMenuItem
             // 
             this.отобратьСобытияToolStripMenuItem.Name = "отобратьСобытияToolStripMenuItem";
-            this.отобратьСобытияToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.отобратьСобытияToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.отобратьСобытияToolStripMenuItem.Text = "Отобрать события";
             this.отобратьСобытияToolStripMenuItem.Visible = false;
             this.отобратьСобытияToolStripMenuItem.Click += new System.EventHandler(this.отобратьСобытияToolStripMenuItem_Click);
@@ -739,9 +741,9 @@ namespace Attraction.PresentationLayer
             this.panel10.Controls.Add(this.label23);
             this.panel10.Controls.Add(this.comboBox5);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(0, 288);
+            this.panel10.Location = new System.Drawing.Point(0, 304);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(834, 104);
+            this.panel10.Size = new System.Drawing.Size(834, 88);
             this.panel10.TabIndex = 4;
             // 
             // button20
@@ -1400,6 +1402,13 @@ namespace Attraction.PresentationLayer
             this.toolStripMenuItem2.Size = new System.Drawing.Size(103, 22);
             this.toolStripMenuItem2.Text = "Excel";
             // 
+            // отобратьДостопримечательностиToolStripMenuItem
+            // 
+            this.отобратьДостопримечательностиToolStripMenuItem.Name = "отобратьДостопримечательностиToolStripMenuItem";
+            this.отобратьДостопримечательностиToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.отобратьДостопримечательностиToolStripMenuItem.Text = "Отобрать достопримечательности";
+            this.отобратьДостопримечательностиToolStripMenuItem.Click += new System.EventHandler(this.отобратьДостопримечательностиToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 21F);
@@ -1542,5 +1551,6 @@ namespace Attraction.PresentationLayer
         private System.Windows.Forms.ToolStripMenuItem типыДостопримечательностейToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem типыСобытийToolStripMenuItem;
         private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.ToolStripMenuItem отобратьДостопримечательностиToolStripMenuItem;
     }
 }
