@@ -74,22 +74,54 @@ namespace Attraction.PresentationLayer
             });
         }
 
-        private void ToggleItemsTableContextMenu(CurrentTable currentTable)
+        private void ToggleControls(CurrentTable currentTable)
         {
             switch (currentTable)
             {
                 case CurrentTable.Attraction:
-                    деталиToolStripMenuItem.Visible = true;
-                    отобратьСобытияToolStripMenuItem.Visible = true;
-                    отобратьДостопримечательностиToolStripMenuItem.Visible = false;
+                    ToggleAttractionControls(true);
+                    ToggleEventControls(false);
+                    ToggleLocalityControls(false);
                     break;
                 case CurrentTable.Locality:
-                    отобратьДостопримечательностиToolStripMenuItem.Visible = true;
-                    деталиToolStripMenuItem.Visible = false;
-                    отобратьСобытияToolStripMenuItem.Visible = false;
+                    ToggleAttractionControls(false);
+                    ToggleEventControls(false);
+                    ToggleLocalityControls(true);
+                    break;
+                case CurrentTable.Event:
+                    ToggleAttractionControls(false);
+                    ToggleEventControls(true);
+                    ToggleLocalityControls(false);
+                    break;
+                case CurrentTable.TypeAttraction:
+                    ToggleAttractionControls(false);
+                    ToggleEventControls(false);
+                    ToggleLocalityControls(false);
+                    break;
+                case CurrentTable.TypeEvent:
+                    ToggleAttractionControls(false);
+                    ToggleEventControls(false);
+                    ToggleLocalityControls(false);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(currentTable), currentTable, null);
+            }
+
+            void ToggleAttractionControls(bool state)
+            {
+                деталиToolStripMenuItem.Visible = state;
+                отобратьСобытияToolStripMenuItem.Visible = state;
+                panel11.Visible = state;
+            }
+
+            void ToggleEventControls(bool state)
+            {
+                panel10.Visible = state;
+            }
+
+            void ToggleLocalityControls(bool state)
+            {
+                отобратьДостопримечательностиToolStripMenuItem.Visible = state;
             }
         }
 
@@ -118,7 +150,7 @@ namespace Attraction.PresentationLayer
                 listView1.Items.Add(newItem);
             }
 
-            ToggleItemsTableContextMenu(CurrentTable);
+            ToggleControls(CurrentTable);
         }
 
         public void button1_Click(object sender, EventArgs e)
@@ -148,8 +180,7 @@ namespace Attraction.PresentationLayer
                 listView1.Items.Add(newItem);
             }
 
-            ToggleItemsTableContextMenu(CurrentTable);
-            panel10.Visible = false;
+            ToggleControls(CurrentTable);
             UpdateCombobox();
         }
 
@@ -185,7 +216,7 @@ namespace Attraction.PresentationLayer
                 listView1.Items.Add(newItem);
             }
 
-            ToggleItemsTableContextMenu(CurrentTable);
+            ToggleControls(CurrentTable);
             panel10.Visible = false;
             UpdateCombobox();
         }
@@ -211,7 +242,7 @@ namespace Attraction.PresentationLayer
                 listView1.Items.Add(newItem);
             }
 
-            ToggleItemsTableContextMenu(CurrentTable);
+            ToggleControls(CurrentTable);
             panel10.Visible = false;
             UpdateCombobox();
         }
@@ -237,7 +268,7 @@ namespace Attraction.PresentationLayer
                 listView1.Items.Add(newItem);
             }
 
-            ToggleItemsTableContextMenu(CurrentTable);
+            ToggleControls(CurrentTable);
             panel10.Visible = false;
             UpdateCombobox();
         }
@@ -795,6 +826,11 @@ namespace Attraction.PresentationLayer
         }
 
         private void отобратьДостопримечательностиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button22_Click(object sender, EventArgs e)
         {
 
         }

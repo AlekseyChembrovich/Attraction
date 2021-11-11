@@ -76,6 +76,7 @@ namespace Attraction.PresentationLayer
             this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.деталиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отобратьСобытияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отобратьДостопримечательностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -130,7 +131,13 @@ namespace Attraction.PresentationLayer
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.отобратьДостопримечательностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -144,6 +151,7 @@ namespace Attraction.PresentationLayer
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -671,7 +679,7 @@ namespace Attraction.PresentationLayer
             this.отобратьСобытияToolStripMenuItem,
             this.отобратьДостопримечательностиToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(266, 136);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(266, 114);
             // 
             // удалитьToolStripMenuItem
             // 
@@ -703,6 +711,13 @@ namespace Attraction.PresentationLayer
             this.отобратьСобытияToolStripMenuItem.Visible = false;
             this.отобратьСобытияToolStripMenuItem.Click += new System.EventHandler(this.отобратьСобытияToolStripMenuItem_Click);
             // 
+            // отобратьДостопримечательностиToolStripMenuItem
+            // 
+            this.отобратьДостопримечательностиToolStripMenuItem.Name = "отобратьДостопримечательностиToolStripMenuItem";
+            this.отобратьДостопримечательностиToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.отобратьДостопримечательностиToolStripMenuItem.Text = "Отобрать достопримечательности";
+            this.отобратьДостопримечательностиToolStripMenuItem.Click += new System.EventHandler(this.отобратьДостопримечательностиToolStripMenuItem_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -723,6 +738,7 @@ namespace Attraction.PresentationLayer
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.panel11);
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Controls.Add(this.listView1);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1402,12 +1418,95 @@ namespace Attraction.PresentationLayer
             this.toolStripMenuItem2.Size = new System.Drawing.Size(103, 22);
             this.toolStripMenuItem2.Text = "Excel";
             // 
-            // отобратьДостопримечательностиToolStripMenuItem
+            // panel11
             // 
-            this.отобратьДостопримечательностиToolStripMenuItem.Name = "отобратьДостопримечательностиToolStripMenuItem";
-            this.отобратьДостопримечательностиToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
-            this.отобратьДостопримечательностиToolStripMenuItem.Text = "Отобрать достопримечательности";
-            this.отобратьДостопримечательностиToolStripMenuItem.Click += new System.EventHandler(this.отобратьДостопримечательностиToolStripMenuItem_Click);
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.comboBox8);
+            this.panel11.Controls.Add(this.button21);
+            this.panel11.Controls.Add(this.button22);
+            this.panel11.Controls.Add(this.label26);
+            this.panel11.Controls.Add(this.label27);
+            this.panel11.Controls.Add(this.comboBox7);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel11.Location = new System.Drawing.Point(0, 216);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(834, 88);
+            this.panel11.TabIndex = 5;
+            // 
+            // button21
+            // 
+            this.button21.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button21.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button21.Location = new System.Drawing.Point(536, 12);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(136, 43);
+            this.button21.TabIndex = 21;
+            this.button21.Text = "Очистить";
+            this.button21.UseVisualStyleBackColor = true;
+            // 
+            // button22
+            // 
+            this.button22.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button22.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(179)))));
+            this.button22.Location = new System.Drawing.Point(688, 12);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(136, 43);
+            this.button22.TabIndex = 20;
+            this.button22.Text = "Фильтр";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.label26.Location = new System.Drawing.Point(100, 12);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(138, 19);
+            this.label26.TabIndex = 18;
+            this.label26.Text = "Местоположение:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.label27.Location = new System.Drawing.Point(24, 52);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(214, 19);
+            this.label27.TabIndex = 17;
+            this.label27.Text = "Тип достопримечательности:";
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox7.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(244, 52);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(157, 22);
+            this.comboBox7.TabIndex = 16;
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(64)))), ((int)(((byte)(71)))));
+            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox8.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(244, 13);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(157, 22);
+            this.comboBox8.TabIndex = 22;
             // 
             // FormMain
             // 
@@ -1446,6 +1545,8 @@ namespace Attraction.PresentationLayer
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1552,5 +1653,12 @@ namespace Attraction.PresentationLayer
         private System.Windows.Forms.ToolStripMenuItem типыСобытийToolStripMenuItem;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.ToolStripMenuItem отобратьДостопримечательностиToolStripMenuItem;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox comboBox7;
     }
 }
