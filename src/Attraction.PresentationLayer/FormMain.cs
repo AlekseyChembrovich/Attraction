@@ -60,6 +60,9 @@ namespace Attraction.PresentationLayer
             this.FillCombobox(comboBox2, _localityService.GetAll().Select(x => x.Name).ToArray());
             this.FillCombobox(comboBox3, _attractionService.GetAll().Select(x => x.Name).ToArray());
             this.FillCombobox(comboBox4, _typeEventService.GetAll().Select(x => x.Name).ToArray());
+
+            this.FillCombobox(comboBox8, _localityService.GetAll().Select(x => x.Name).ToArray());
+            this.FillCombobox(comboBox7, _typeAttractionService.GetAll().Select(x => x.Name).ToArray());
         }
 
         private void PickOutButtonCurrentTable(CurrentTable currentTable)
@@ -153,19 +156,19 @@ namespace Attraction.PresentationLayer
             ToggleControls(CurrentTable);
         }
 
-        public void button1_Click(object sender, EventArgs e)
+        private void PrintAttractions(IEnumerable<AttractionDto> attractionsDto)
         {
             CurrentTable = CurrentTable.Attraction;
             PickOutButtonCurrentTable(CurrentTable);
             this.OpenAddPanel(panel3, _addPanels);
             this.GenerateColumns(
                 listView1,
-                90, 
+                90,
                 "Код", "Имя", "Дата основания", "Описание", "Круглосуточность", "Начало", "Конец", "Место нахожднеия", "Тип"
-                );
-            foreach (var item in _attractionService.GetAll())
+            );
+            foreach (var item in attractionsDto)
             {
-                var newItem = new ListViewItem(new []
+                var newItem = new ListViewItem(new[]
                 {
                     item.Id.ToString(),
                     item.Name,
@@ -181,14 +184,19 @@ namespace Attraction.PresentationLayer
             }
 
             ToggleControls(CurrentTable);
+        }
+
+        public void button1_Click(object sender, EventArgs e)
+        {
+            var attractionsAll = _attractionService.GetAll();
+            PrintAttractions(attractionsAll);
             UpdateCombobox();
         }
 
         public void button2_Click(object sender, EventArgs e)
         {
-            var item = _eventService.GetAll();
-            PrintEvents(item);
-            panel10.Visible = true;
+            var eventsAll = _eventService.GetAll();
+            PrintEvents(eventsAll);
             UpdateCombobox();
         }
 
@@ -217,7 +225,6 @@ namespace Attraction.PresentationLayer
             }
 
             ToggleControls(CurrentTable);
-            panel10.Visible = false;
             UpdateCombobox();
         }
 
@@ -243,7 +250,6 @@ namespace Attraction.PresentationLayer
             }
 
             ToggleControls(CurrentTable);
-            panel10.Visible = false;
             UpdateCombobox();
         }
 
@@ -269,7 +275,6 @@ namespace Attraction.PresentationLayer
             }
 
             ToggleControls(CurrentTable);
-            panel10.Visible = false;
             UpdateCombobox();
         }
 
@@ -546,6 +551,21 @@ namespace Attraction.PresentationLayer
             PrintEvents(eventsFilter);
         }
 
+        private void отобратьДостопримечательностиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count <= 0)
+            {
+                MessageBox.Show("Выберите строку таблицы!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var localityId = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
+            var locality = _localityService.GetById(localityId);
+            var attractions = _attractionService.GetAll().ToList();
+            var attractionsFilter = attractions.Where(x => x.LocalityDto.Region == locality.Region).ToList();
+            PrintAttractions(attractionsFilter);
+        }
+
         private void button13_Click(object sender, EventArgs e) => ClearAttractionAddPanel();
 
         private void button14_Click(object sender, EventArgs e) => ClearEventAddPanel();
@@ -589,6 +609,27 @@ namespace Attraction.PresentationLayer
             }
 
             PrintEvents(eventsDto);
+        }
+
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            var attractionsDto = _attractionService.GetAll().ToList();
+            if (comboBox8.SelectedIndex != -1)
+            {
+                var nameLocality = comboBox8.SelectedItem.ToString();
+                var localityDto = _localityService.GetByName(nameLocality);
+                attractionsDto = attractionsDto.Where(x => x.LocalityId == localityDto.Id).ToList();
+            }
+
+            if (comboBox5.SelectedIndex != -1)
+            {
+                var nameTypeAttraction = comboBox7.SelectedItem.ToString();
+                var typeAttractionDto = _typeAttractionService.GetByName(nameTypeAttraction);
+                attractionsDto = attractionsDto.Where(x => x.TypeAttractionId == typeAttractionDto.Id).ToList();
+            }
+
+            PrintAttractions(attractionsDto);
         }
 
         private void button20_Click(object sender, EventArgs e)
@@ -823,16 +864,6 @@ namespace Attraction.PresentationLayer
         private void типыСобытийToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PrintIntoExcel(CurrentTable.TypeEvent, "Название", "Описание");
-        }
-
-        private void отобратьДостопримечательностиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button22_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
